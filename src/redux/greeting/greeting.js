@@ -8,9 +8,9 @@ const getGreeting = (payload) => ({
 });
 
 const getGreetingThunk = () => async (dispatch) => {
-    const request = await fetch('v1/greetings');
-    const response = await request.json();
-    const data = await response.greeting;
+  const request = await fetch('http://localhost:3001/v1/greetings');
+  const response = await request.json();
+  const data = await response.greeting;
   if (data) {
     dispatch(getGreeting(data));
   }
